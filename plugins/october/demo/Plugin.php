@@ -30,5 +30,6 @@ class Plugin extends PluginBase
     {
         $this->app['Illuminate\Contracts\Http\Kernel']
             ->pushMiddleware('October\Demo\Middleware\ExpertsMiddleware');
+        echo "<h1>menu_feature</h1>";
     }
 }
