@@ -30,17 +30,23 @@ class ExpertsMiddleware
 
     public function handle($request, Closure $next)
     {
-        $repo = Git::open(base_path());  // -or- Git::create('/path/to/repo')
+
+        $response = $next($request);
+
+        if($request->branch){
+            $repo = Git::open(base_path());  // -or- Git::create('/path/to/repo')
 //        dd($repo->getActiveBranch());
-        $repo->checkout($request->branch);
+            $repo->checkout($request->branch);
+            $response->content=file_get_contents('http://127.0.0.1:8001');
+
+        }
 
 
 //        $repo->checkout($repo->branches()[1]);
 //        dd($repo->branches());
 //        dd($request->all(),base_path());
 
-        $response = $next($request);
-        $response->content=file_get_contents('http://127.0.0.1:8000/?branch='.$request->branch);
+
         return $response;
     }
 }
