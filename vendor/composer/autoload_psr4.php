@@ -68,5 +68,5 @@ return array(
     'Cms\\' => array($baseDir . '/modules/cms'),
     'Backend\\' => array($baseDir . '/modules/backend'),
     'AssertGD\\' => array($vendorDir . '/meyfa/phpunit-assert-gd/src'),
-    '' => array($vendorDir . '/nesbot/carbon/src'),
+    '' => array($vendorDir . '/coyl/git/src', $vendorDir . '/nesbot/carbon/src'),
 );
