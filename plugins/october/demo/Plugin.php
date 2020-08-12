@@ -30,6 +30,6 @@ class Plugin extends PluginBase
     {
         $this->app['Illuminate\Contracts\Http\Kernel']
             ->pushMiddleware('October\Demo\Middleware\ExpertsMiddleware');
-        echo "<h1>dadasd</h1>";
+        echo "<h1>master</h1>";
     }
 }
