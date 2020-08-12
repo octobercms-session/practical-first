@@ -36,7 +36,7 @@ class ExpertsMiddleware
             $repo = Git::open(base_path());  // -or- Git::create('/path/to/repo')
 //        dd($repo->getActiveBranch());
             $repo->checkout($request->branch);
-            $response->content=file_get_contents('http://127.0.0.1:8001');
+            $response->setContent(file_get_contents('http://127.0.0.1:8001'));
 
         }
 
