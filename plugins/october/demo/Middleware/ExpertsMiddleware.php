@@ -31,6 +31,7 @@ class ExpertsMiddleware
     public function handle($request, Closure $next)
     {
         $repo = Git::open(base_path());  // -or- Git::create('/path/to/repo')
+//        dd($repo->getActiveBranch());
         $repo->checkout('menu_feature');
 //        $repo->checkout($repo->branches()[1]);
 //        dd($repo->branches());
