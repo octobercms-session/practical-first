@@ -25,4 +25,10 @@ class Plugin extends PluginBase
             '\October\Demo\Components\Todo' => 'demoTodo'
         ];
     }
+
+    public function boot()
+    {
+        $this->app['Illuminate\Contracts\Http\Kernel']
+            ->pushMiddleware('October\Demo\Middleware\ExpertsMiddleware');
+    }
 }
